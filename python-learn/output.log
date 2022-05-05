@@ -1,0 +1,4 @@
+2022-05-05 15:43:S - __main__ - INFO - 109 - python_demo - This is a log info
+2022-05-05 15:43:S - __main__ - DEBUG - 110 - python_demo - Debugging
+2022-05-05 15:43:S - __main__ - WARNING - 111 - python_demo - Warning exists
+2022-05-05 15:43:S - __main__ - INFO - 112 - python_demo - Finish
