@@ -1,8 +1,13 @@
 import numpy as np
 import pandas as pd
+import matplotlib
+import wordcloud
+import imageio
+import jieba
+
 
 # 1. series
-s = pd.Series(data=[1, 2, 3, 4], index=["a","b","c","d"])
+s = pd.Series(data=[1, 2, 3, 4], index=["a", "b", "c", "d"])
 print(s)
 
 # 2. DataFrame
