@@ -1,0 +1,74 @@
+---
+meta:
+  - name: keywords
+    content: pandas文档,pandas文档目录
+  - name: description
+    content: Pandas是强大的 Python 数据分析支持库，这是关于中文文档的目录结构
+---
+
+# Pandas: 强大的 Python 数据分析支持库
+
+**版本**：0.25.3
+**日期**：2019 年 10 月 31 日
+
+**下载文档（英文）**: [PDF Version](https://pandas.pydata.org/pandas-docs/stable/pandas.pdf) | [Zipped HTML](https://pandas.pydata.org/pandas-docs/stable/pandas.zip)
+
+**实用链接**: [二进制安装包](https://pypi.org/project/pandas) | [源码仓库](https://github.com/pandas-dev/pandas) | [问题和想法](https://github.com/pandas-dev/pandas/issues) | [常见问题](https://stackoverflow.com/questions/tagged/pandas) | [邮件列表](https://groups.google.com/forum/#!forum/pydata)
+
+[Pandas](/) 是基于 BSD 许可的开源支持库，为 Python 提供了高性能、易使用的数据结构与数据分析工具。
+
+更多内容，请参阅 [Pandas 概览](/docs/getting_started/overview.html)。
+
+- [v0.25.3 版新特性（发布于：2019 年 10 月 31 日）](whatsnew/v0.25.0.html)
+- [安装](installation.html)
+- [快速入门](getting_started/index.html)
+  - [Pandas 概览](getting_started/overview.html)
+  - [十分钟入门 Pandas](getting_started/10min.html)
+  - [基础用法](getting_started/basics.html)
+  - [数据结构简介](getting_started/dsintro.html)
+  - [与其它工具比较](getting_started/comparison.html)
+  - [教程](getting_started/tutorials.html)
+- [用户指南](user_guide/index.html)
+  - [IO 工具（文本、CSV、HDF5 …）](user_guide/io.html)
+  - [索引与选择数据](user_guide/indexing.html)
+  - [多层索引与高级索引](user_guide/advanced.html)
+  - [合并、连接、结合](user_guide/merging.html)
+  - [重塑与数据透视表](user_guide/reshaping.html)
+  - [处理文本数据](user_guide/text.html)
+  - [处理缺失数据](user_guide/missing_data.html)
+  - [分类数据](user_guide/categorical.html)
+  - [可空整型数据](user_guide/integer_na.html)
+  - [可视化](user_guide/visualization.html)
+  - [计算工具](user_guide/computation.html)
+  - [分组操作：拆分-应用-组合](user_guide/groupby.html)
+  - [时间序列 / 日期](user_guide/timeseries.html)
+  - [时间差](user_guide/timedeltas.html)
+  - [样式](user_guide/style.html)
+  - [选项与设置](user_guide/options.html)
+  - [性能优化](user_guide/enhancingperf.html)
+  - [稀疏数据结构](user_guide/sparse.html)
+  - [常见问题（FAQ）](user_guide/gotchas.html)
+  - [烹饪指南](user_guide/cookbook.html)
+- [Pandas 生态系统](ecosystem.html)
+- [API 参考手册](https://pandas.pydata.org/pandas-docs/stable/reference/index.html)
+  - [输入 / 输出](https://pandas.pydata.org/pandas-docs/stable/reference/io.html) 
+  - [通用函数](https://pandas.pydata.org/pandas-docs/stable/reference/general_functions.html)
+  - [Series](https://pandas.pydata.org/pandas-docs/stable/reference/series.html)
+  - [DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html)
+  - [Pandas 数组](https://pandas.pydata.org/pandas-docs/stable/reference/arrays.html)
+  - [Panel](https://pandas.pydata.org/pandas-docs/stable/reference/panel.html)
+  - [索引](https://pandas.pydata.org/pandas-docs/stable/reference/indexing.html)
+  - [日期偏移](https://pandas.pydata.org/pandas-docs/stable/reference/offset_frequency.html)
+  - [窗口函数](https://pandas.pydata.org/pandas-docs/stable/reference/window.html)
+  - [分组](https://pandas.pydata.org/pandas-docs/stable/reference/groupby.html)
+  - [重采样](https://pandas.pydata.org/pandas-docs/stable/reference/resampling.html)
+  - [样式](https://pandas.pydata.org/pandas-docs/stable/reference/style.html)
+  - [可视化](https://pandas.pydata.org/pandas-docs/stable/reference/plotting.html)
+  - [通用工具函数](https://pandas.pydata.org/pandas-docs/stable/reference/general_utility_functions.html)
+  - [扩展](https://pandas.pydata.org/pandas-docs/stable/reference/extensions.html)
+- [开发者文档](development/index.html)
+  - [为 Pandas 做贡献](development/contributing.html)
+  - [内核](development/internals.html)
+  - [扩展 Pandas](development/extending.html)
+  - [开发者](development/developer.html)
+- [版本日志](whatsnew/index.html)
