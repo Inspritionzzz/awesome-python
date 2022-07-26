@@ -1,3 +1,4 @@
+
 class People2:
     def __init__(self, name, age):
         self.name = name
