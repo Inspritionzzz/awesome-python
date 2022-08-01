@@ -1,9 +1,6 @@
 import numpy as np
 import pandas as pd
 import matplotlib
-import wordcloud
-import imageio
-import jieba
 
 
 # 1. series
