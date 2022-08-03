@@ -13,3 +13,5 @@ print(s)
 # 2. DataFrame
 df = pd.DataFrame(data=[[1, 3, 5], [2, 6, 9]], columns=["java", "python", "SQL"])
 print(df)
+
+print(df[:1])
