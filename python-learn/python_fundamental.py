@@ -1,8 +1,8 @@
-
 def builinFunction():
     # 查看python内置函数
     dir(__builtins__)
     help(type)
+
 
 def operator():
     # 运算符
@@ -11,6 +11,7 @@ def operator():
     print(3 * 4)  # 12
     print(3 / 4)  # 0.75
     print(3 // 4)  # 0
+    print(20220202 // 10000 == 2022)
     print(3 % 4)  # 3
     print(2 ** 3)  # 8
 
@@ -84,6 +85,7 @@ def variables():
     print(set_1.pop())
     pass
 
+
 def dataType():
     # Number: int float complex
     x = 1
@@ -96,14 +98,14 @@ def dataType():
     print(type(a2), type(b2), type(c2))
 
     # Boolean
-    print(True + 1) # 可视为int
+    print(True + 1)  # 可视为int
     print(False)
     print(not False)
 
     # String
     str1 = 'just\ta\ttest'
     print(str1, type(str1))
-    print(str1+'\ttest\t', 'test'*3)
+    print(str1 + '\ttest\t', 'test' * 3)
     print(len(str1))
     print(str1[0], str1[-1])
     print(dir(str))
@@ -231,10 +233,12 @@ def dataType():
     print(a_set.symmetric_difference(b_set))
     pass
 
+def Structured():
+    pass
 
 if __name__ == '__main__':
     # 内置函数
-    # builinFunction()
+    # builtinFunction()
 
     # 运算符
     # operator()
@@ -245,5 +249,6 @@ if __name__ == '__main__':
     # 数据类型
     dataType()
 
-    
-
+    # python标准库
+    # python函数
+    # python高级特性
