@@ -180,11 +180,55 @@ def dataType():
     print(list(enumerate(list8)))  # 添加序号并枚举列表
     print(list(enumerate(list8, start=1)))
 
-
     # Tuple
-    # Dictionary
-    # Set
+    tup1 = ()
+    print(type(tup1))
+    tup2 = (100,)
+    tup3 = (100)
+    print(type(tup2), type(tup3))
+    tup4 = 'a', 'b', 2
+    print(type(tup4))
+    print(tup4[:1])
+    print(tup2 + tup4)
+    alist = [11, 22, 33]
+    atuple = tuple(alist)
+    print(atuple)
+    newtuple = tuple('just a test')
+    print(newtuple)
+    print(id(newtuple))
+    newtuple = newtuple[:1] + ('just',) + newtuple[1:]  # 元组不可更改,这里采用拼接的方式创建新的元组
+    print(id(newtuple))
 
+    # Dictionary
+    dict1 = {'a': 1, '2022': [1, 2, 3], 100: ('just', 'a', 'test')}
+    print(dict1)
+    print(dict1.items())  # 获取字典中的所有键/值对元素,并封装在元组中
+    print(dict1.keys())
+    print(dict1.values())
+    print(dict1[100])  # 看起来像数组的索引值,其实是字典里的一个键
+    print(dict1.get('a'))
+    print(dict1.get('a', '此元素不存在'))
+    dict1['a'] = 2  # 修改元素
+    dict1['2023'] = 3
+    print(dict1)
+    dict2 = {'zhao': 33, 'a': 4}
+    dict1.update(dict2)  # 将一个字典整体更新另一个字典
+    print(dict1)
+    print(dict2.pop('a'))  # 指名道姓的删除
+    print(dict2.popitem())
+
+    # Set
+    a = {3, 3, 4, 5}
+    print(type(a), a)
+    list1 = [1, 3, 3, 5, 7]
+    print(set(list1))
+    a_set = set([8, 9, 10, 11])
+    b_set = {10, 11, 12, 13}
+    print(a_set | b_set)
+    print(a_set & b_set)
+    print(a_set - b_set)
+    print(a_set ^ b_set)
+    print(a_set.symmetric_difference(b_set))
     pass
 
 
