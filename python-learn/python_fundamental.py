@@ -234,6 +234,96 @@ def dataType():
     pass
 
 def Structured():
+
+    flag = False
+    if flag:
+        print('test if')
+    else:
+        print('test if else')
+
+    score = 90
+    if 90 <= score <= 100:
+        print('A')
+    elif 80 <= score <= 89:
+        print('B')
+    else:
+        print('C')
+
+    a_dict = {}
+    if not a_dict:
+        print('空字典')  # 非空即为真,None为False
+
+    x = 10
+    y = 20
+    small = x if x < y else y
+    print(small)
+
+    list1 = [1, 2, 3, 4, 5, 6, 7, 8]
+    for mylist in list1:
+        temp = mylist * 2
+        print(temp)
+
+    sum = 0
+    for x in range(101):  # range(start, stop[, step])
+        sum = sum + x
+    print(sum)
+
+    seq = ['a', 'b', 'c', 'd']
+    for index, key in enumerate(seq):
+        print('seq [{0}] = {1}'.format(index, key))
+
+    # while
+    numbers = [23, 43, 56, 64, 76]
+    even = []
+    odd = []
+    # even, odd = [], []
+    while len(numbers) > 0:
+        num2 = numbers.pop()
+        if num2 % 2 == 0:
+            even.append(num2)
+        else:
+            odd.append(num2)
+    print("Even", even)
+    print("Odd", odd)
+
+    n = 1
+    nums = []
+    while n < 100:
+        n = n + 1
+        if n > 50:
+            break
+        if n % 2 == 0:
+            nums.append(n)
+    print(nums)
+
+    # 推导式
+    # 列表推导式
+    a_list = [1, '4', 9, 'a', 0, 'bc']
+    squared_ints = [e**2 for e in a_list if type(e) == int]
+    print(squared_ints)
+
+    vec = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    flag_vec = [num for elem in vec for num in elem]
+    print(flag_vec)
+
+    new_list = [(x, y) for x in [1, 2, 3] for y in [3, 1, 4] if x != y]
+    print(new_list)
+
+    # 上面代码等价于
+    new_list = []
+    for x in [1, 2, 3]:
+        for y in [3, 1, 4]:
+            if x != y :
+                new_list.append((x, y))
+    print(new_list)
+    # 字典推导式
+    mcase = {'a': 10, 'b': 30, 'c': 50}
+    kv_exchange = {v : k for k, v in mcase.items()}
+    print(kv_exchange)
+    # 集合推导式
+    squared = {x**2 for x in [1, 1, 2, -2, 3]}
+    print(squared)
+
     pass
 
 if __name__ == '__main__':
@@ -246,8 +336,11 @@ if __name__ == '__main__':
     # 变量
     # variables()
 
-    # 数据类型
-    dataType()
+    # 数据类型:Number Boolean String List Tuple Dictionary Set
+    # dataType()
+
+    # 程序结构
+    Structured()
 
     # python标准库
     # python函数
