@@ -1,3 +1,12 @@
+import sys
+from collections import namedtuple, deque, OrderedDict, defaultdict, Counter
+from math import sin as sin
+from math import cos as cos
+import random as rd
+import numpy as np
+import mytoolkits.parameters as PI
+# from mytoolkits.parameters import PI
+
 def builinFunction():
     # 查看python内置函数
     dir(__builtins__)
@@ -326,9 +335,93 @@ def Structured():
 
     pass
 
+def buildinFunction():
+    # 1. 使用自定义模块
+    sin(0.4)
+    x = rd.random()
+    print("x = ", x)
+    a = np.array((1, 2, 3, 4, 5))
+    print(a)
+    PI.printPI()
+    print("PI.PI ", PI.PI)
+
+    # 2. 查看系统扫描模块路径
+    print(sys.path)
+    home_dir = 'D:\\DevelopmentEnvironment'
+    sys.path.append(home_dir)
+    print(sys.path)
+    # %run parameters.py
+
+    # 3. Collections
+    # namedtuple: 创建特殊的类, 属于元组
+    Point = namedtuple('Point', ['x', 'y'])
+    p = Point(3, 4)
+    print(p.x, p.y, isinstance(p, Point), isinstance(p, tuple), p[0], p[1])
+    a, b = p
+    print(a, b)
+    # deque: 实现高效插入和删除操作的数据类型, 解决列表插入和删除慢的问题(线性存储)
+    dq = deque(['a', 'b', 'c'])
+    dq.append(1)
+    print(dq)
+    dq.appendleft(2)
+    print(dq)
+    dq.insert(2, 'x')
+    print(dq)
+    dq.pop()
+    print(dq)
+    dq.popleft()
+    print(dq)
+    dq.remove('x')
+    print(dq)
+    dq.reverse()
+    print(dq)
+    # OrderedDict: 有序字典
+    od = OrderedDict()
+    od["a"] = 1
+    od["b"] = 2
+    od["c"] = 3
+    print(od)
+    keys = ["aa", "bb", "cc"]
+    value = [4, 5, 6]
+    od.update(zip(keys, value))
+    print(od)
+    print(od.pop('a'))
+    od.move_to_end('b')
+    print(od)
+    # defaultdict: 键值不存在时返回一个默认值
+    dd = defaultdict(lambda: 'N/A') # 要早于字典的创建
+    dd['key1'] = 'abc'
+    print(dd['key1'], dd['key2'])
+    # Counter
+    colors = ['aa', 'aa', 'dd', 'dd', 'ee','ff', 'aa']
+    result = {}
+    # 使用for统计颜色数量
+    for color in colors:
+        if result.get(color) == None:
+            result[color] = 1
+        else:
+            result[color] += 1
+    print(result)
+    # 使用Counter统计
+    result2 = Counter(colors)
+    print(dict(result))
+    print(result2.most_common(2))  # 频次前二, 返回列表对象
+    print(result2.most_common(2)[1][1])  #
+
+    # 4. datatime
+
+    pass
+
+
+def Function():
+
+
+    pass
+
+
+# 在本文件中__name__就是__main__
+# 在外部执行本文件,__name__就是python文件名(不包含.py)
 if __name__ == '__main__':
-    # 内置函数
-    # builtinFunction()
 
     # 运算符
     # operator()
@@ -340,8 +433,14 @@ if __name__ == '__main__':
     # dataType()
 
     # 程序结构
-    Structured()
+    # Structured()
 
-    # python标准库
+    # python标准库和内置模块
+    buildinFunction()
+
+
     # python函数
+
+    # Function()
+
     # python高级特性
