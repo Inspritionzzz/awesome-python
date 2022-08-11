@@ -9,6 +9,7 @@ from math import cos as cos
 import random as rd
 import numpy as np
 import mytoolkits.parameters as PI
+from itertools import islice
 
 
 # from mytoolkits.parameters import PI
@@ -783,6 +784,59 @@ def my_gen():
     print("第三次返回")
     yield (3)
 
+class Fibonacci:
+    def __init__(self):
+        self.previous, self.current = 0, 1
+    def __iter__(self):
+        return self
+    def __next__(self):
+        value = self.current
+        self.previous, self.current = self.current, self.current + self.previous
+        self.previous
+        return value
+
+def readFile():
+    try:
+        file = open('.\\resources\\data.json', mode='r')
+        # python会根据上下文语境自动帮我们调用close()方法
+        # with open('.\\resources\\data.json', 'r') as f:
+        print(file)
+        for line in file:   # 按行读取
+            print(line)
+        file2 = open('.\\resources\\data.json', mode='r')   # 一次性读出
+        print(file2.read())
+        file.seek(0)  # 将文件指针复位
+        print(file.read())  # 其中read()未设定参数或者参数为负,则读取文件中所有数据
+        print(file.tell())  # 返回指针位置
+        file.seek(0)
+        print(file.read(10))  # 从文件开始读取20字节的数据
+        file.readline(10)  # 读取第一行的前10个字符,指针下移
+        file.seek(0)
+        lines = file.readlines()  # 读取文件所有行
+        print(lines[:2])  # 返回文件的前两行
+    finally:
+        print("关闭资源")
+        if file:
+            file.close()
+        if file2:
+            file2.close()  # close()会先刷新缓冲区还没有写入磁盘的信息,然后关闭文件
+    pass
+
+def writeFile():
+    a = 123
+    with open(".\\resources\\data2.txt", 'w') as f:
+        f.write("just a test\njust two test")
+        f.write("\n" + str(a))
+    pass
+
+def this_fails():
+    x = 1 / 0
+    pass
+
+def avg(score):
+    assert len(score) != 0, "输入不能为空"  # 给出错误信息
+    return sum(score) / len(score)
+    pass
 
 def Advanced():
     # 1. OOP
@@ -801,7 +855,7 @@ def Advanced():
     stu = Student('alice', 1, 2, 3)
     stu.say()
 
-    # 生成器与迭代器
+    # 2. 生成器与迭代器
     n = 10
     a = [x**2 for x in range(n) if x % 2 == 0]  # 列表推导式
     print(a, type(a))
@@ -836,6 +890,32 @@ def Advanced():
             print("访问越界！")
             break
     print("正常输出")
+    # 创建迭代器
+    f = Fibonacci()
+    a = list(islice(f, 0, 10))
+    print(a)
+    b = list(islice(f, 0, 10))
+    print(b)
+
+    # 3. 文件操作
+    readFile()
+    writeFile()
+
+    # 4. 异常处理: try print() assert logging
+    try:
+        this_fails()
+    except ZeroDivisionError as err:
+        print('运行时异常:', err)
+    finally:
+        print('执行到了finally')
+    print('代码执行完毕')
+
+    # num = 10
+    # if num > 5:
+    #     raise Exception('处理自定义异常:{}'.format(num))
+    score = [10, 20]
+    print("平均分数为:", avg(score))
+    print('代码执行完毕')
 
     pass
 
