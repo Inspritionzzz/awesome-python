@@ -33,17 +33,15 @@ def postgre_conn():
     conn.close()  # 关闭链接
     return result;
 
-def send_mail(to_list, sub, content):
+def send_mail(content):
     #设置服务器，用户名、口令以及邮箱的后缀
-    mail_from = "1019919111@qq.com"
-    mail_user = "xiepan1990929"
-    mail_pass = "3330372"  # 邮件授权码，非登录密码
-    mail_to = ["591831416@qq.com"]
+    mail_from = "1011919111@qq.com"
+    mail_pass = "buqgqocsbnpobbje"  # 邮件授权码，非登录密码
+    mail_to = "591831416@qq.com"
     mail_server = "smtp.qq.com"  # smtp服务器
 
-    mail_postfix = "qq.com"
     # me = mail_user+"<"+mail_user+"@"+mail_postfix+">"
-    msg = MIMEText('hello，send by python_test...', 'plain', 'utf-8')  # 发送纯文本格式的文件
+    msg = MIMEText('hello，send by python_test...' + content, 'plain', 'utf-8')  # 发送纯文本格式的文件
 
     msg['Subject'] = mail_from  # 发送邮件地址
     msg['From'] = ';'.join(mail_to)   # 接受邮件地址
@@ -60,6 +58,12 @@ def send_mail(to_list, sub, content):
         print('邮件发送失败...')
         return False
     pass
+"""
+获取b站up主动态
+"""
+def collect_lucky_draw_info():
+
+    pass
 
 """
 微信消息推送
@@ -74,6 +78,8 @@ if __name__ == '__main__':
                         datefmt='%Y-%m-%d %H:%M:S',
                         format='%(asctime)s - %(name)s - %(levelname)s - %(lineno)d - %(module)s - %(message)s')
     logger = logging.getLogger(__name__)
+    email_content = 'just a test'
+    send_mail(email_content)
     # logger.info('This is a log info')
     # logger.debug('Debugging')
     # logger.warning('Warning exists')
@@ -81,6 +87,7 @@ if __name__ == '__main__':
     # logging.error('error')
 
     logger.info('抽奖程序启动成功...')
-    result = postgre_conn()
-    print(result)
-    logger.info('连接postgre数据库成功')
+
+    # result = postgre_conn()
+    # print(result)
+    # logger.info('连接postgre数据库成功')
