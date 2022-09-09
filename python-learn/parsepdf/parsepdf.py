@@ -31,6 +31,7 @@ def get_bug_file_name():
     [result_duplicate.append(i) for i in result if i not in result_duplicate]
     result_duplicate.remove("pom.xml")
     with open("conmand", 'w') as f:
+        f.truncate()
         for i in range(len(result_duplicate)):
             print(result_duplicate[i])
             f.write(result_duplicate[i])
