@@ -95,7 +95,7 @@ def GetUsers():
     DynamicAPI = "https://api.live.bilibili.com/dynamic_repost/v1/dynamic_repost/view_repost?dynamic_id="+ Dynamic_id + "&offset="
     conn = sqlite3.connect('Bilibili_TMP.db')
     c = conn.cursor()
-    while Tmp_count<Total_count:
+    while Tmp_count < Total_count:
         Tmp_DynamicAPI = DynamicAPI + str(Tmp_count)
         try:
             BiliJson = json.loads(GetMiddleStr(urllib.request.urlopen(Tmp_DynamicAPI).read(), b"comments\":", b",\"total"))
