@@ -198,6 +198,8 @@ def dataType():
     print(list(enumerate(list8)))  # 添加序号并枚举列表
     print(list(enumerate(list8, start=1)))
 
+
+
     # Tuple
     tup1 = ()
     print(type(tup1))
@@ -918,6 +920,8 @@ def Advanced():
     print('代码执行完毕')
 
     pass
+
+
 
 
 # 在本文件中__name__就是__main__
