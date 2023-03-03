@@ -29,7 +29,7 @@ def get_all_items():
 
 def send_email():
 
-
+    print('just a test')
 
     pass
 
