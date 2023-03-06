@@ -5,7 +5,7 @@ import datetime
 import logging
 import os
 from wxpy import *
-import smtplib
+import lib
 from email.mime.text import MIMEText
 import psycopg2
 
