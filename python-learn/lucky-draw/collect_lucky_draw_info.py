@@ -27,12 +27,6 @@ def get_all_items():
 
     pass
 
-def send_email():
-
-    print('just a test')
-
-    pass
-
 def send_simple_email():
 
     sender = 'jason-office-pc'
@@ -51,7 +45,7 @@ def send_simple_email():
         smtpObj.connect('smtp.qq.com,465')
         # smtpObj.login('1019919111@qq.com', 'zcy100037')
 
-        smtpObj.login('1019919111@qq.com', 'rxgjivpdqrxbbdeg')  # 登录smtp服务器
+        smtpObj.login('1019919111@qq.com', 'oonlejzexpeibfef')  # 登录smtp服务器
 
         smtpObj.sendmail(sender, receivers, message.as_string())
         print("邮件发送成功")
@@ -64,7 +58,7 @@ def send_simple_email():
 def send_mail(content):
     #设置服务器，用户名、口令以及邮箱的后缀
     mail_from = "1011919111@qq.com"
-    mail_pass = "rxgjivpdqrxbbdeg"  # 邮件授权码，非登录密码
+    mail_pass = "oonlejzexpeibfef"  # 邮件授权码，非登录密码
     mail_to = "591831416@qq.com"
     mail_server = "smtp.qq.com"  # smtp服务器
 
@@ -90,6 +84,6 @@ def send_mail(content):
 
 if __name__ == '__main__':
 
-    send_email()
+    send_mail('just a test')
     # send_simple_email()
     pass
