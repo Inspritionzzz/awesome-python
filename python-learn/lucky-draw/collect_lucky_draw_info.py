@@ -27,11 +27,11 @@ def get_all_items():
 
     pass
 
-def send_email():
-
-    print('just a test')
-
-    pass
+# def send_email():
+#
+#     print('just a test')
+#
+#     pass
 
 def send_simple_email():
 
@@ -61,7 +61,7 @@ def send_simple_email():
     pass
 
 
-def send_mail(content):
+def send_email():
     #设置服务器，用户名、口令以及邮箱的后缀
     mail_from = "1011919111@qq.com"
     mail_pass = "rxgjivpdqrxbbdeg"  # 邮件授权码，非登录密码
@@ -69,7 +69,7 @@ def send_mail(content):
     mail_server = "smtp.qq.com"  # smtp服务器
 
     # me = mail_user+"<"+mail_user+"@"+mail_postfix+">"
-    msg = MIMEText('hello，send by python_test...' + content, 'plain', 'utf-8')  # 发送纯文本格式的文件
+    msg = MIMEText('hello，send by python_test...' + 'content', 'plain', 'utf-8')  # 发送纯文本格式的文件
 
     msg['Subject'] = mail_from  # 发送邮件地址
     msg['From'] = ';'.join(mail_to)   # 接受邮件地址
