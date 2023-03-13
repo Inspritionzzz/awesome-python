@@ -63,8 +63,9 @@ def send_mail(content):
     mail_server = "smtp.qq.com"  # smtp服务器
 
     # me = mail_user+"<"+mail_user+"@"+mail_postfix+">"
-    msg = MIMEText('hello，send by python_test...' + content, 'plain', 'utf-8')  # 发送纯文本格式的文件
+    # msg = MIMEText('hello，send by python_test...' + content, 'plain', 'utf-8')  # 发送纯文本格式的文件
 
+    msg = MIMEText('by python', 'plain', 'utf-8')  # 发送纯文本格式的文件
     msg['Subject'] = mail_from  # 发送邮件地址
     msg['From'] = ';'.join(mail_to)   # 接受邮件地址
     msg['To'] = 'just a python test'  # 主题
@@ -84,6 +85,6 @@ def send_mail(content):
 
 if __name__ == '__main__':
 
-    send_mail('just a test')
+    send_mail('test')
     # send_simple_email()
     pass
