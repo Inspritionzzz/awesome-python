@@ -85,6 +85,6 @@ def send_email():
 
 if __name__ == '__main__':
 
-    send_email('test')
+    send_email()
     # send_simple_email()
     pass
