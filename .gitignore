@@ -26,6 +26,7 @@ wheels/
 *.egg
 MANIFEST
 *.pdf
+*.txt
 
 # PyInstaller
 #  Usually these files are written by a Python script from a template
