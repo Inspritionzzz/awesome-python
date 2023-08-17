@@ -9,7 +9,7 @@ def sql_generate(str1, str2):
 
     sql = ''
     # len(SIMPLE)
-    with open('sql-script.txt', 'w', encoding='utf-8') as file:
+    with open('sql-script', 'w', encoding='utf-8') as file:
         for i in range(len(SIMPLE)):
             sql = 'insert into simplified_complex_contrast(simplified_form, complex_form) values('
             sql = sql + "'" + str1[i]  +  "'"  + ',' +  "'" + str2[i] +  "'"  + ')' + ';'
