@@ -35,7 +35,7 @@ def sql_generate_hr(schema):
 if __name__ == '__main__':
     # print(SIMPLE[1])
     # print(len(SIMPLE))
-    # sql_generate(SIMPLE, TRADITION)
+    # sql_generate(SIMPLE, TRADITION)haodi
     sql_generate_hr('test')
 
 
