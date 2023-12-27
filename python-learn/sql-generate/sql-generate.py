@@ -1,5 +1,3 @@
-
-
 def sql_generate(str1, str2):
 
     'insert into simplified_complex_contrast(simplified_form, complex_form) values(str1, str2)'
@@ -31,11 +29,24 @@ def sql_generate_hr(schema):
             file_res.write(sql + '\n')
     pass
 
+def sql_generate_distinct():
+
+    list_res = []
+    with open('one-col-distinct-src.txt', 'r', encoding='utf-8') as file_src:
+        for line in file_src:   # 按行读取
+            # print(line)
+            list_res.append(line.strip())
+    # print(list_res)
+    with open('one-col-distinct-res.txt', 'w', encoding='utf-8') as file_res:
+        for i in range(len(list_res)):
+            sql = 'insert into one_col_distinct(col1) values(' + '\'' + list_res[i] + '\');'
+            file_res.write(sql + '\n')
+    pass
 
 if __name__ == '__main__':
     # print(SIMPLE[1])
     # print(len(SIMPLE))
     # sql_generate(SIMPLE, TRADITION)haodi
-    sql_generate_hr('test')
-
+    # sql_generate_hr('test')
+    sql_generate_distinct()
 
