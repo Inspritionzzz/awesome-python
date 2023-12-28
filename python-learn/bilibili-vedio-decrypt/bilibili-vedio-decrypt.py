@@ -34,6 +34,7 @@ if __name__ == '__main__':
     counter = 0
     dirname = os.path.dirname(os.path.realpath(__file__))
     print(dirname)
+    dirname = r"D:\\Users\\jason\\Desktop\\记录\\学习-技术文档_书籍\\bilibili\\select"
     for name in os.listdir(dirname):
         if name.endswith('.mp4'):
             counter += 1
