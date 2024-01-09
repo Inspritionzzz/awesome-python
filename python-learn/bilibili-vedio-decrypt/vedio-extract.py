@@ -13,9 +13,9 @@ def extract_files_from_folders(folder_path, destination_path):
                 # 获取源文件的文件名和扩展名
                 file_name, file_extension = os.path.splitext(file)
 
-                # 筛选视频文件
-                if file_extension != ".mp4":
-                    continue
+                # # 筛选视频文件
+                # if file_extension != ".mp4":
+                #     continue
 
                 # 构建目标文件路径
                 count = 1
@@ -27,10 +27,10 @@ def extract_files_from_folders(folder_path, destination_path):
 
                 # 复制文件到目标路径
                 shutil.copy(file_path, new_file_path)
-
+    print('finish')
 
 # 指定文件夹路径和目标路径
-folder_path = r"D:\\Users\\jason\\Desktop\\记录\\学习-技术文档_书籍\\bilibili\\996438904"
+folder_path = r"D:\\Users\\jason\\Desktop\\记录\\学习-技术文档_书籍\\bilibili\\203821664"
 destination_path = r"D:\\Users\\jason\\Desktop\\记录\\学习-技术文档_书籍\\bilibili\\select"
 # destination_path = r"D:\\Users\\jason\\Desktop\\github\\awesome-python\\python-learn\\bilibili-vedio-decrypt"
 
