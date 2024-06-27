@@ -30,6 +30,7 @@ def extract_files_from_folders(folder_path, destination_path):
     print('finish')
 
 # 指定文件夹路径和目标路径
+
 folder_path = r"D:\\Users\\jason\\Desktop\\记录\\学习-技术文档_书籍\\bilibili\\58666880"
 destination_path = r"D:\\Users\\jason\\Desktop\\记录\\学习-技术文档_书籍\\bilibili\\select"
 # destination_path = r"D:\\Users\\jason\\Desktop\\github\\awesome-python\\python-learn\\bilibili-vedio-decrypt"
