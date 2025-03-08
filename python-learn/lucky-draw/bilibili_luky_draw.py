@@ -20,25 +20,6 @@ def get_qrurl() -> list:
     return data
 
 
-
-
-def get_qrurl() -> list:
-    """返回qrcode链接以及token"""
-    with httpx.Client() as client:
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE'
-        }
-        url = 'https://passport.bilibili.com/x/passport-login/web/qrcode/generate?source=main-fe-header'
-        data = client.get(url=url, headers=headers)
-    total_data = data.json()
-    qrcode_url = total_data['data']['url']
-    qrcode_key = total_data['data']['qrcode_key']
-    data = {}
-    data['url'] = qrcode_url
-    data['qrcode_key'] = qrcode_key
-    return data
-
-
 def make_qrcode(data):
     """制作二维码"""
     qr = qrcode.QRCode(
@@ -56,13 +37,23 @@ def make_qrcode(data):
 
 def sav_cookie(data, id):
     """用于储存cookie"""
+    # 使用 pathlib 模块处理路径
+    from pathlib import Path
+    path = Path(r'D:\Users\chengyu\Desktop\github\jupyter\bilibili_login\cookie')
+
+    # 确保路径存在
+    path.mkdir(parents=True, exist_ok=True)
+
+    # 拼接文件路径
+    file_path = path / f'{id}.json'
+
     try:
-        with open(f' D:\\Users\\chengyu\\Desktop\\github\\jupyter\\bilibili_login\\cookie\\{id}.json', 'w') as f:
+        with open(file_path, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False)
-    except FileNotFoundError:
-        os.mkdir('D:\\Users\\chengyu\\Desktop\\github\\jupyter\\bilibili_login\\cookie')
-        with open(f' D:\\Users\\chengyu\\Desktop\\github\\jupyter\\bilibili_login\\cookie\\{id}.json', 'w') as f:
-            json.dump(data, f, ensure_ascii=False)
+        print(f"Cookie 已成功保存到 {file_path}")
+    except Exception as e:
+        print(f"保存 Cookie 时出现错误: {e}")
+
 
 
 def main_run():
@@ -83,10 +74,11 @@ def main_run():
         sav_cookie(cookie, 'test')
 
 
-def load_cookie() -> dict:
+def load_cookie(id) -> dict:
     """用于加载cookie"""
+    path = r'D:\Users\chengyu\Desktop\github\jupyter\bilibili_login\cookie'
     try:
-        file = open(f' D:\\Users\\chengyu\\Desktop\\github\\jupyter\\bilibili_login\\cookie\\{id}.json', 'r')
+        file = open(f'{path}\\{id}.json', 'r')
         cookie = dict(json.load(file))
     except FileNotFoundError:
         msg = '未查询到用户文件，请确认资源完整'
@@ -98,7 +90,7 @@ def load_cookie() -> dict:
 def person():
     """获取个人资料"""
     url = 'https://api.bilibili.com/x/web-interface/nav'
-    cookie = load_cookie()
+    cookie = load_cookie('test')
     print(cookie)
     with httpx.Client() as client:
         headers = {
@@ -115,4 +107,5 @@ def person():
 
 
 if __name__ == "__main__":
+    #main_run()
     person()
