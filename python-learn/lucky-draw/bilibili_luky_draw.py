@@ -137,6 +137,7 @@ def load_cookie(id) -> dict:
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
             cookie = json.load(file)
+            print(dict(cookie))
             return dict(cookie)
     except FileNotFoundError:
         msg = '未查询到用户文件，请确认资源完整'
