@@ -33,6 +33,7 @@ def batch_compress_files(source_dir, output_dir):
     zip_file.close()
 
 if __name__ == "__main__":
+    # 更改路径
     source_directory = 'your_source_directory'
     output_directory = 'your_output_directory'
     batch_compress_files(source_directory, output_directory)
